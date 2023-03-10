@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+label {
+  cursor: pointer;
+}
+
+.container {
+  width: 70vw;
+  height: 100%;
+}
+
+.mem-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid blue;
+  padding: 5px 0;
+  color: #0969da;
+}
+
+.container:hover .mem-item {
+  color: black;
+}
+
+/* checkbox */
+.checked,
+.unchecked {
+  display: none;
+}
+
+input:checked ~ .checked {
+  display: inline;
+}
+
+input:not(:checked) ~ .unchecked {
+  display: inline;
+}
+
+input:not(:checked) ~ img {
+  display: none;
+}
