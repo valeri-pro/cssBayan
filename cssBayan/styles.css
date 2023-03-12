@@ -1,15 +1,15 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+* {
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
   width: 0;
 }
 
-* {
-  box-sizing: border-box;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 label {
@@ -21,15 +21,13 @@ h1 {
 }
 
 .container {
-  width: 70vw;
+  width: 50vw;
   height: 100%;
 }
 
 .mem-item {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
   border-bottom: 2px solid blue;
   padding: 5px 0;
   color: #0969da;
@@ -38,33 +36,52 @@ h1 {
 .container:hover .mem-item {
   color: black;
 }
+
+.mem-item input:checked ~ h2 {
+  color: black;
+}
+
 .mem-title ~ input:checked {
   color: black;
 }
 
 .mem-title {
-  text-align: center;
+  width: 80%;
+  text-align: left;
 }
 
-/* checkbox */
-/* .checked,
+.icon {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mem-image {
+  flex-grow: 1;
+  object-fit: contain;
+  width: 30vw;
+  height: 30vw;
+}
+
+.checked,
 .unchecked {
   display: none;
 }
 
-input:checked ~ .checked {
+input:checked ~ div .checked {
   display: inline;
 }
 
-input:not(:checked) ~ .unchecked {
+input:not(:checked) ~ div .unchecked {
   display: inline;
-} */
-
-input:not(:checked):hover ~ img {
-  display: inline-block;
 }
 
-input:not(:checked):not(:hover) ~ img {
+input:checked ~ .checked > img {
+  display: inline;
+}
+
+input:not(:checked) ~ .unchecked > img {
   display: none;
 }
 
@@ -83,10 +100,6 @@ input:checked ~ img {
   .mem-title {
     font-size: 0.7em;
   }
-  .mem-image {
-    width: 100px;
-    height: 100px;
-  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 820px) {
@@ -96,10 +109,6 @@ input:checked ~ img {
   .mem-title {
     font-size: 1em;
   }
-  .mem-image {
-    width: 250px;
-    height: 250px;
-  }
 }
 
 @media screen and (min-width: 820px) and (max-width: 1920px) {
@@ -108,9 +117,5 @@ input:checked ~ img {
   }
   .mem-title {
     font-size: 1.7em;
-  }
-  .mem-image {
-    width: 400px;
-    height: 400px;
   }
 } ;
